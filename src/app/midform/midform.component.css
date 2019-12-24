@@ -1,0 +1,31 @@
+p{
+    color:red;
+    font-size:14 px;
+}
+#sic.ng-valid{
+    border-left:solid 7px green;
+}
+#sic.ng-invalid{
+    border-left:solid 7px red;
+}
+#sic.ng-priostine{
+    background:peachpuff;
+}
+#sic.ng-dirty{
+    background:white;
+    color:black;
+}
+
+input.ng-valid{
+    border-left:solid 7px green;
+}
+input.ng-invalid{
+    border-left:solid 7px red;
+}
+input.ng-priostine{
+    background:peachpuff;
+}
+input.ng-dirty{
+    background:white;
+    color:black;
+}

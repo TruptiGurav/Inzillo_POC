@@ -1,0 +1,55 @@
+<div class="card">
+  <div class="card-header bg-success" style="text-align: left;" > <i class="fa fa-usd fa-fw" aria-hidden="true"></i>
+    Select Pricing Options</div>
+  <div class="card-body">
+
+    <table class="table table-bordered table-hover ">
+      <thead class="bg-light">
+        <tr>
+          <th>Name</th>
+          <th>Savings
+            
+          </th>
+          <th>Residuals</th>
+          <th>Rate</th>
+        </tr>
+      </thead>
+      
+      <tbody  *ngFor="let option of options; let i=index" (click)="RowSelected(option);">
+        <tr>
+          <td>{{option.name}}</td>
+          <td>{{option.savings}}</td>
+          <td>{{option.residual}}</td>
+          <td>{{option.rate}}</td>
+        </tr>
+      </tbody>
+      
+    </table>
+<!-- Sorting not done -->
+
+
+    <form class="inline-form">
+      <label><h4>Non-Monthly-Fees</h4></label>
+      <button class="btn btn-outline-secondary btn-sm text-dark">Add</button>
+    </form>
+    <div class="bg-secondary text-dark text-center p-3 mt-3 mb-3"><h5>Final Proposal Details Bellow</h5></div>
+    <form class="inline-form">
+      <label><h4>Proposal</h4></label>
+      <button class="btn btn-outline-secondary btn-sm text-dark">Update </button>
+      <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+
+    </form>
+   <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td class="bg-light">Generated</td>
+        <td>Date</td>
+        <td class="bg-light">pricing</td>
+        <td>{{selectedRow.name}}</td>
+      </tr>
+    </tbody>
+   </table>
+   
+
+  </div>
+  </div>

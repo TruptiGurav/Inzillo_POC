@@ -1,0 +1,18 @@
+<table class="table table-bordered table-hover" matSort (matSortChange)="sortData($event)">
+  <thead class="bg-light">
+  <tr>
+    <th mat-sort-header="name">Name</th>
+    <th mat-sort-header="savings">Savings</th>
+    <th mat-sort-header="residual">Residual</th>
+    <th mat-sort-header="rate">Rate</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let data of sortedData">
+    <td>{{data.name}}</td>
+    <td>{{data.savings}}</td>
+    <td>{{data.residual}}</td>
+    <td>{{data.rate}}</td>
+  </tr>
+</tbody>
+</table>

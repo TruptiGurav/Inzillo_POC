@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+    border: black;
+  }
+  
+.mat-sort-header-container {
+    align-items: center;
+  }
+
+  .table-hover tbody tr:hover td {
+    background: lightgreen;
+}

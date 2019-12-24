@@ -1,0 +1,193 @@
+<!-- <div class="container">
+    <div class="col-sm-3">
+      <form #regForm="ngForm" novalidate (ngSubmit)="onSubmit(regForm)">
+        <div class="form-group">
+          <label>Name</label>
+          <input class="form-control" type="text" name="fname" #name="ngModel"  required ngModel>
+          <div *ngIf="name.errors?.required">Enter name </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input class="form-control" type="email" name="email"  #email="ngModel" email required ngModel>
+          <div *ngIf="email.errors?.required && email.errors?.invalid">Correct email</div>
+        </div>
+        <div class="form-group form-check">
+          <label>Name
+          <input type="checkbox" class="form-control form-check-input">Remember Me </label>
+        </div>
+        <button class="btn btn-success" [disabled]="regForm.invalid">Submit</button>
+      </form>
+    </div>
+</div> -->
+
+<div class="card">
+  <div class="card-header bg-success" style="text-align: left;" > <i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>
+    Rate Review</div>
+  <div class="card-body">
+    <form #midform="ngForm" novalidate>
+      <div class="form-group">
+        <label for="sel1" style="float: left;">Description</label>
+        <input type="text" class="form-control" #decs_detail="ngModel" name="desc" [(ngModel)]="desc" required ngModel >
+         <p *ngIf="decs_detail.errors?.required">Description Field should not be empty</p>
+        </div>
+      <div class="form-group">
+        <label for="sic" style="float:left;">SIC code</label>
+        <select class="form-control" (change)="onChange($event.target.value)" id="sic"  name="sic" #sel_opt="ngModel" required ngModel >
+          <option *ngFor="let sic of SIC_code; let i=index" [value]="sic" >{{sic}}</option>
+         </select>
+         <p *ngIf="sel_opt.errors?.required">Select SIC code</p>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+        <div class="col">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-cc-visa fa-fw" aria-hidden="true"></i><i class="fa fa-usd" aria-hidden="true"></i>
+            </span>
+          </div>
+          <input type="text" [disabled] = "true" class="form-control" placeholder="Username" name="visa1" [(ngModel)]="visa1" ngModel>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-3 mr-5">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-cc-visa fa-fw" aria-hidden="true"></i><i class="fa fa-hashtag " aria-hidden="true"></i> </span>
+          </div>
+          <input type="text"  [disabled] = "true" class="form-control" placehoder="dsff" name="visa1_t" [(ngModel)]="visa1_t"ngModel>
+        </div>
+      </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-cc-visa fa-fw" aria-hidden="true"></i> <i class="fa fa-usd" aria-hidden="true"></i>
+            </span>
+          </div>
+          <input type="text"  [disabled] = "true" class="form-control" placeholder="Username" name="visa2" [(ngModel)]="visa2" ngModel>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-3 mr-5">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-cc-visa fa-fw" aria-hidden="true"></i><i class="fa fa-hashtag " aria-hidden="true"></i></span>
+          </div>
+          <input type="text" [disabled] = "true" class="form-control" placehoder="dsff" name="visa2_t" [(ngModel)]="visa2_t" ngModel>
+        </div>
+      </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-cc-visa fa-fw" aria-hidden="true"><i class="fa fa-usd" aria-hidden="true"></i>
+            </i></span>
+          </div>
+          <input type="text" [disabled] = "true" class="form-control" placeholder="Username" name="visa3" [(ngModel)]="visa3" ngModel>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-3 mr-5">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-cc-visa fa-fw" aria-hidden="true"></i><i class="fa fa-hashtag " aria-hidden="true"></i> </span>
+          </div>
+          <input type="text" [disabled] = "true" class="form-control" placehoder="dsff" name="visa3_t" [(ngModel)]="visa3_t" ngModel>
+        </div>
+      </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-cc-visa" aria-hidden="true"></i><i class="fa fa-usd" aria-hidden="true"></i>
+            </span>
+          </div>
+          <input type="text" [disabled] = "true" class="form-control" placeholder="Username" name="visa4"  [(ngModel)]="visa4" ngModel>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-3 mr-5">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-cc-visa" aria-hidden="true"></i><i class="fa fa-hashtag" aria-hidden="true"></i></span>
+          </div>
+          <input type="text" [disabled] = "true" class="form-control" placehoder="dsff" name="visa4_t" [(ngModel)]="visa4_t" ngModel>
+        </div>
+      </div>
+      </div>
+
+    </div> 
+    <!-- end of middle part  -->
+
+    <div class="row">
+      <div class="col">
+      <label style="float: left;">Total volume</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-usd" aria-hidden="true"></i></span>
+        </div>
+        <input type="text" [disabled] = "true" class="form-control" placeholder="Username" name="tot_vol" [(ngModel)]="tot_vol" ngModel>
+      </div>
+    </div>
+    <div class="col">
+      <label style="float: left;">Total Trasaction</label>
+      <div class="input-group mb-3 mr-5">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-hashtag" aria-hidden="true"></i> </span>
+        </div>
+        <input type="text" [disabled] = "true" class="form-control" placehoder="dsff" name="tot_trans" [(ngModel)]="tot_trans" ngModel>
+      </div>
+    </div>
+    </div>
+    
+    <div class="row">
+      <div class="col">
+      <label style="float: left;">Avg Ticket</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-usd" aria-hidden="true"></i></span>
+        </div>
+        <input type="text" [disabled] = "true" class="form-control" placeholder="Username" name="avg_tick"  [(ngModel)]="avg_tick" ngModel>
+      </div>
+    </div>
+    <div class="col">
+      <label style="float: left;">Current Rate</label>
+      <div class="input-group mb-3 mr-5">
+          <input type="text" [disabled] = "true" class="form-control" name="cur_rate"  [(ngModel)]="cur_rate" ngModel>
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="fa fa-percent" aria-hidden="true"></i> </span>
+          </div>
+      </div>
+    </div>
+    </div>
+    
+
+    <div class="row">
+      <div class="col">
+      <label style="float: left;">Current Fees</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-usd" aria-hidden="true"></i></span>
+        </div>
+        <input type="text" [disabled] = "true" class="form-control" placeholder="Username" name="cur_fees" [(ngModel)]="cur_fees" ngModel>
+      </div>
+    </div>
+    <div class="col">
+      <label style="float: left;">Current Amex Fees <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+      </label>
+      <div class="input-group mb-3 mr-5">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-usd" aria-hidden="true"></i> </span>
+        </div>
+        <input type="text" [disabled] = "true" class="form-control" placehoder="dsff" name="cur_a_fees"  [(ngModel)]="cur_a_fees" ngModel>
+      </div>
+    </div>
+    </div>
+
+    </form>
+
+  </div>
+</div>
